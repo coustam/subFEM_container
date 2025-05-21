@@ -16,7 +16,7 @@ xhost +local:docker
 2. Build the container:
 
 ```bash
-docker-compose build
+docker compose build
 ```
 
 3. Run it:
