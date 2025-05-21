@@ -35,16 +35,15 @@ RUN for lib in kicad-symbols kicad-footprints kicad-templates; do \
     cmake --install . --prefix=/usr/installtemp; \
     done
 
-FROM ubuntu:22.04 AS final
+FROM debian:bookworm AS final
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     libglu1-mesa libglew2.2 libx11-6 libwxgtk3.2* python3 python3-pip \
-    libngspice0 ngspice libocct-modeling-algorithms libocct-modeling-data \
-    libocct-data-exchange libocct-visualization libocct-foundation libocct-ocaf \
-    zlib1g shared-mime-info libgit2-1.5 libsecret-1-0 libprotobuf32 libzstd1 libnng1 \
-    build-essential cmake libhdf5-dev libvtk7-dev libboost-all-dev libcgal-dev \
-    libtinyxml-dev qtbase5-dev libvtk7-qt-dev python3-dev pkg-config \
+    libngspice0 ngspice zlib1g shared-mime-info \
+    libgit2-dev libsecret-1-0 libprotobuf-dev libzstd1 libnng1 \
+    build-essential cmake libhdf5-dev libvtk9-dev libboost-all-dev libcgal-dev \
+    libtinyxml-dev qtbase5-dev libvtk9-qt-dev python3-dev pkg-config \
     octave liboctave-dev gengetopt help2man groff pod2pdf bison flex libhpdf-dev \
     libtool git wget curl libx11-dev x11-apps python3-tk && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
