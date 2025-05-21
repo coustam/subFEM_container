@@ -17,9 +17,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /src
 RUN git clone -b $KICAD_VERSION https://gitlab.com/kicad/code/kicad.git && \
-    git clone -b $KICAD_VERSION https://gitlab.com/kicad/libraries/kicad-symbols.git && \
-    git clone -b $KICAD_VERSION https://gitlab.com/kicad/libraries/kicad-footprints.git && \
-    git clone -b $KICAD_VERSION https://gitlab.com/kicad/libraries/kicad-templates.git
+    git clone https://gitlab.com/kicad/libraries/kicad-symbols.git && \
+    git clone https://gitlab.com/kicad/libraries/kicad-footprints.git && \
+    git clone https://gitlab.com/kicad/libraries/kicad-templates.git
 
 WORKDIR /src/kicad
 RUN mkdir -p build && cd build && \
