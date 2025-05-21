@@ -1,9 +1,10 @@
-version: "1.0"
+version: "3.9"
 services:
   suite:
-    build: .
-    container_name: kicad_openems
+    build:
+      context: .
     image: kicad-openems-suite
+    container_name: kicad_openems
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
