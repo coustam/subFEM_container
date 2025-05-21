@@ -51,8 +51,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=kicad-build /usr/installtemp /usr/
 
-RUN pip install --upgrade pip && \
-    pip install numpy matplotlib cython h5py setuptools==58.2.0 wheel pyproject-toml
+RUN pip install --upgrade pip --break-system-packages && \
+    pip install numpy matplotlib cython h5py setuptools==58.2.0 wheel pyproject-toml --break-system-packages
 
 RUN git clone https://github.com/antmicro/gerber2ems.git /opt/gerber2ems && \
     pip install -r /opt/gerber2ems/requirements.txt && \
