@@ -1,0 +1,18 @@
+version: "1.0"
+services:
+  suite:
+    build: .
+    container_name: kicad_openems
+    image: kicad-openems-suite
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=/root/.Xauthority
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.Xauthority:/root/.Xauthority:rw
+      - ./src:/workspace
+    network_mode: host
+    ipc: host
+    stdin_open: true
+    tty: true
