@@ -3,6 +3,7 @@ services:
   suite:
     build:
       context: .
+      dockerfile: Dockerfile
     image: kicad-openems-suite
     container_name: kicad_openems
     environment:
