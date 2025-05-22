@@ -55,8 +55,9 @@ RUN pip install --upgrade pip --break-system-packages && \
     pip install numpy matplotlib cython h5py setuptools==58.2.0 wheel pyproject-toml --break-system-packages
 
 RUN git clone https://github.com/antmicro/gerber2ems.git /opt/gerber2ems && \
-    pip install -r /opt/gerber2ems/requirements.txt && \
-    pip install /opt/gerber2ems
+    pip install --break-system-packages -r /opt/gerber2ems/requirements.txt && \
+    pip install --break-system-packages /opt/gerber2ems
+
 
 WORKDIR /opt
 RUN git clone --recursive https://github.com/thliebig/openEMS-Project.git
