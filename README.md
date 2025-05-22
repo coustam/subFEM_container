@@ -6,7 +6,10 @@ This repository builds a unified Docker environment containing:
 - gerber2ems tool
 
 ## Usage
-
+0. abcs
+```bash
+git clone https://github.com/coustam/subFEM_container.git
+```
 1. Allow Docker to connect to your X11 display:
 
 ```bash
@@ -22,7 +25,7 @@ docker compose build
 3. Run it:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 You can access the CLI inside:
